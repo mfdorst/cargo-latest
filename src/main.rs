@@ -1,7 +1,7 @@
+use anyhow::Result;
 use crates_io_api::SyncClient;
 use std::env;
 use std::time::Duration;
-use thiserror::Error;
 
 fn main() -> Result<()> {
     let client = SyncClient::new(
@@ -25,11 +25,3 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
-#[derive(Error, Debug)]
-enum Error {
-    #[error(transparent)]
-    InvalidHeaderValue(#[from] http::header::InvalidHeaderValue),
-}
-
-type Result<T, E = Error> = std::result::Result<T, E>;

@@ -11,5 +11,4 @@ repository = "https://github.com/mfdorst/cargo-latest"
 
 [dependencies]
 crates_io_api = "0.7.0"
-thiserror = "1.0.24"
-http = "0.2.3"
+anyhow = "1.0.40"
